@@ -273,7 +273,7 @@ section {
 }
 
 .tab_container {
-    top: 30px;
+    top: 0;
     background: #242424;
     border: 1px solid #505050;
     border-top: none;
