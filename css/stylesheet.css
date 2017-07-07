@@ -228,7 +228,7 @@ nav h3 {
 .workspace {
     position: absolute;
     bottom: 0;
-    left: 15%;
+    left: 0;
     right: 0;
 }
 
@@ -251,7 +251,7 @@ section {
 }
 
 .viewer_container {
-    right: 50%;
+    
 }
 
 .sandbox_container{
@@ -666,7 +666,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width: 1024px) {
     .sidemenu,
     .workspace {
-        top: 60px;
+        top: 0px;
     }
 
     nav {
@@ -674,7 +674,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .top-menu-buttons {
-        top: 30px;
+        top: 0px;
         left: 0;
     }
 }
