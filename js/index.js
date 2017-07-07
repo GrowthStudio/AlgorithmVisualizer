@@ -40,6 +40,9 @@ $(() => {
   extend(true, window, modules);
 
   Server.loadCategories().then((data) => {
+    app.setCategories(data);
+    DOM.addCategories();
+
     const {
       category,
       algorithm,
