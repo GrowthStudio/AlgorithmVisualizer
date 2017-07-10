@@ -43,39 +43,27 @@ $(() => {
     app.setCategories(data);
     DOM.addCategories();
 
-    // const {
-    //   category,
-    //   algorithm,
-    //   file
-    // } = getPath();
-    // if (isScratchPaper(category)) {
-    //   if (algorithm) {
-    //     Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
-    //       DOM.showAlgorithm(category, algorithm, data);
-    //     });
-    //   } else {
-    //     Server.loadAlgorithm(category).then((data) => {
-    //       DOM.showAlgorithm(category, null, data);
-    //     });
-    //   }
-    // } else if (category && algorithm) {
-    //   DOM.showRequestedAlgorithm(category, algorithm, file);
-    // } else {
-    //   DOM.showFirstAlgorithm();
-    // }
+    const {
+      category,
+      algorithm,
+      file
+    } = getPath();
+
+    DOM.showRequestedAlgorithm(category, algorithm, file);
+    // app.getEditor().execute();
 
     // window.postMessage(JSON.stringify({status: 'ready'}));
     // document.addEventListener('message', function (event) {
     //   var data = JSON.parse(event.data);
     //   if(data.action === 'algorithm') {
     //     const { category, algorithm, file } = data.data;
-        const category = 'backtracking';
-        const algorithm = 'n_queens';
-        DOM.showRequestedAlgorithm(category, algorithm, 'basic');
-      var err = app.getEditor().execute();
-      if (err) {
-          console.error(err);
-      }
+    //     const category = 'backtracking';
+    //     const algorithm = 'n_queens';
+    //     DOM.showRequestedAlgorithm(category, algorithm, 'basic');
+    //   var err = app.getEditor().execute();
+    //   if (err) {
+    //       console.error(err);
+    //   }
       // }
       //
       // if(data.action === 'run') {
