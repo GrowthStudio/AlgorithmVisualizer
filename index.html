@@ -65,5 +65,16 @@
 <script src="public/lib/Chart-2.1.3.min.js"></script>
 <script src="public/algorithm_visualizer.min.js"></script>
 </body>
-
+<script>
+    window.postMessage(JSON.stringify({status: 'ready'}));
+    $(function () {
+        window.postMessage(JSON.stringify({status: 'ready'}));
+        document.addEventListener('message', function (event) {
+            var data = JSON.parse(event.data);
+            if (data.action === 'algorithm') {
+                window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + data.path;
+            }
+        });
+    })
+</script>
 </html>
