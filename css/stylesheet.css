@@ -296,11 +296,16 @@ section {
     visibility: visible;
 }
 
+section.module_wrapper:first-child {
+    display: block;
+}
+
 .module_wrapper {
     overflow: scroll;
     font-family: monospace;
     border: none;
     border-bottom: 1px solid #505050;
+    display: none;
 }
 
 .module_wrapper .name {
