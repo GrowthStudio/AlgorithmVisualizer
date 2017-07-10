@@ -43,27 +43,40 @@ $(() => {
     app.setCategories(data);
     DOM.addCategories();
 
-    const {
-      category,
-      algorithm,
-      file
-    } = getPath();
-    if (isScratchPaper(category)) {
-      if (algorithm) {
+    // const {
+    //   category,
+    //   algorithm,
+    //   file
+    // } = getPath();
+    // if (isScratchPaper(category)) {
+    //   if (algorithm) {
+    //     Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
+    //       DOM.showAlgorithm(category, algorithm, data);
+    //     });
+    //   } else {
+    //     Server.loadAlgorithm(category).then((data) => {
+    //       DOM.showAlgorithm(category, null, data);
+    //     });
+    //   }
+    // } else if (category && algorithm) {
+    //   DOM.showRequestedAlgorithm(category, algorithm, file);
+    // } else {
+    //   DOM.showFirstAlgorithm();
+    // }
+
+    window.addEventListener('message', function (event) {
+      var data = JSON.parse(event.data);
+      if(data.action === 'algorithm') {
+        const { category, algorithm, file } = data.data;
         Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
           DOM.showAlgorithm(category, algorithm, data);
         });
-      } else {
-        Server.loadAlgorithm(category).then((data) => {
-          DOM.showAlgorithm(category, null, data);
-        });
       }
-    } else if (category && algorithm) {
-      DOM.showRequestedAlgorithm(category, algorithm, file);
-    } else {
-      DOM.showFirstAlgorithm();
-    }
 
+      if(data.action === 'run') {
+        app.getEditor().execute();
+      }
+    });
   });
 
   var v1LoadedScratch = getHashValue('scratch-paper');
