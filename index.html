@@ -66,7 +66,6 @@
 <script src="public/algorithm_visualizer.min.js"></script>
 </body>
 <script>
-    window.postMessage(JSON.stringify({status: 'ready'}));
     $(function () {
         window.postMessage(JSON.stringify({status: 'ready'}));
         document.addEventListener('message', function (event) {
