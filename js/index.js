@@ -64,7 +64,8 @@ $(() => {
     //   DOM.showFirstAlgorithm();
     // }
 
-    window.addEventListener('message', function (event) {
+    window.postMessage(JSON.stringify({status: 'ready'}));
+    document.addEventListener('message', function (event) {
       var data = JSON.parse(event.data);
       if(data.action === 'algorithm') {
         const { category, algorithm, file } = data.data;
