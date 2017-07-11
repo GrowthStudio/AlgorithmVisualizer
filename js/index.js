@@ -65,7 +65,8 @@ $(() => {
       status: 'ready'
     }));
 
-
+    var myEvent = new CustomEvent("bridge.ready");
+    window.dispatchEvent(myEvent);
     $(window).on('bridge.run', function() {
       window.postMessage(JSON.stringify({ status: 'bridge.run' }));
       DOM.showRequestedAlgorithm(window.category, window.algorithm, window.file);
