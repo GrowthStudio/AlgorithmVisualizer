@@ -51,10 +51,14 @@ $(() => {
 
     if(category && algorithm) {
       DOM.showRequestedAlgorithm(category, algorithm, file);
-      $('#btn_run').trigger('click');
+      window.setTimeout(function(){
+        $('#btn_run').trigger('click');
+      }, 100);
     } else {
-      DOM.showRequestedAlgorithm('cryptography', 'caesar_cipher', 'basic');
-      $('#btn_run').trigger('click');
+      DOM.showRequestedAlgorithm('graph_search', 'bfs', 'tree');
+      window.setTimeout(function(){
+        $('#btn_run').trigger('click');
+      }, 100);
     }
     // app.getEditor().execute();
 
