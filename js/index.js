@@ -49,7 +49,10 @@ $(() => {
       file
     } = getPath();
 
-    DOM.showRequestedAlgorithm(category, algorithm, file);
+    if(category && algorithm) {
+      DOM.showRequestedAlgorithm(category, algorithm, file);
+      $('#btn_run').trigger('click');
+    }
     // app.getEditor().execute();
 
     // window.postMessage(JSON.stringify({status: 'ready'}));
