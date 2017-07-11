@@ -1,22 +1,21 @@
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta name="description" content="Tool for visualizing algorithms."/>
     <meta property="og:title" content="Algorithm Visualizer"/>
     <meta property="og:description" content="Tool for visualizing algorithms."/>
     <meta property="og:image" content="img/image.png"/>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
     <title>Algorithm Visualizer</title>
-    <link rel="stylesheet" href="public/algorithm_visualizer.min.css">
+    <link rel="stylesheet" href="public/algorithm_visualizer.min.css"/>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
         });
     </script>
     <script type="text/javascript"
-      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
     </script>
 </head>
 
@@ -66,7 +65,7 @@
 </body>
 <script>
   $(document).ready(function () {
-    window.postMessage(JSON.stringify({status: 'ready'}));
+    window.postMessage(JSON.stringify({ status: 'ready' }));
     document.addEventListener('message', function (event) {
       var data = JSON.parse(event.data);
       if (data.action === 'algorithm') {
