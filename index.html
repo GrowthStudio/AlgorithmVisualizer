@@ -9,7 +9,6 @@
     <meta property="og:image" content="img/image.png"/>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
     <title>Algorithm Visualizer</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="public/algorithm_visualizer.min.css">
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -66,18 +65,18 @@
 <script src="public/algorithm_visualizer.min.js"></script>
 </body>
 <script>
-    $(function () {
-        window.postMessage(JSON.stringify({status: 'ready'}));
-        document.addEventListener('message', function (event) {
-            var data = JSON.parse(event.data);
-            if (data.action === 'algorithm') {
-                window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + data.path;
-            } else if(data.action === 'run') {
-                $('#btn_run').trigger('click');
-            } else if(data.action === 'run') {
-                $('#btn_pause').trigger('click');
-            }
-        });
-    })
+  $(document).ready(function () {
+    window.postMessage(JSON.stringify({status: 'ready'}));
+    document.addEventListener('message', function (event) {
+      var data = JSON.parse(event.data);
+      if (data.action === 'algorithm') {
+        window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + data.path;
+      } else if (data.action === 'run') {
+        $('#btn_run').trigger('click');
+      } else if (data.action === 'run') {
+        $('#btn_pause').trigger('click');
+      }
+    });
+  })
 </script>
 </html>
