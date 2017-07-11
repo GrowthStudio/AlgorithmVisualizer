@@ -108,7 +108,7 @@ TracerManager.prototype = {
       capsule.$container.css({
         top: `${top}%`,
         width: `${width}%`,
-        height: `${height}%`
+        height: `100%`
       });
 
       capsule.tracer.resize();
