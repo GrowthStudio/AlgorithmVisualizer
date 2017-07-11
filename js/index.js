@@ -60,6 +60,19 @@ $(() => {
         $('#btn_run').trigger('click');
       }, 100);
     }
+
+    window.postMessage(JSON.stringify({
+      status: 'ready'
+    }));
+
+
+    $(window).on('bridge.run', function() {
+      window.postMessage(JSON.stringify({ status: 'bridge.run' }));
+      DOM.showRequestedAlgorithm(window.category, window.algorithm, window.file);
+      window.setTimeout(function(){
+        $('#btn_run').trigger('click');
+      }, 100);
+    });
     // app.getEditor().execute();
 
     // window.postMessage(JSON.stringify({status: 'ready'}));
