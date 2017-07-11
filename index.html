@@ -24,7 +24,8 @@
 
 <body>
 
-
+<button id="btn_run"></button>
+<button id="btn_pause"></button>
 <div class="workspace">
     <div class="viewer_container">
         <section class="tab_container">
@@ -72,6 +73,10 @@
             var data = JSON.parse(event.data);
             if (data.action === 'algorithm') {
                 window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + data.path;
+            } else if(data.action === 'run') {
+                $('#btn_run').trigger('click');
+            } else if(data.action === 'run') {
+                $('#btn_pause').trigger('click');
             }
         });
     })
