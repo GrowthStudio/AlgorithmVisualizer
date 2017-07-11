@@ -41,6 +41,10 @@ class LogTracer extends Tracer {
 
   print(message) {
     this.$wrapper.append($('<span>').append(message + '<br/>'));
+    window.postMessage(JSON.stringify({
+      action: 'trace',
+      message: message
+    }));
   }
 
   scrollToEnd(duration) {
