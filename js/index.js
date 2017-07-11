@@ -52,6 +52,9 @@ $(() => {
     if(category && algorithm) {
       DOM.showRequestedAlgorithm(category, algorithm, file);
       $('#btn_run').trigger('click');
+    } else {
+      DOM.showRequestedAlgorithm('cryptography', 'caesar_cipher', 'basic');
+      $('#btn_run').trigger('click');
     }
     // app.getEditor().execute();
 
