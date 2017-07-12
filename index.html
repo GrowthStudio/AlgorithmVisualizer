@@ -97,15 +97,13 @@
       };
       awaitPostMessage(); // Call this only once in your Web Code.
 
-    window.postMessage(JSON.stringify({ status: 'ready' }));
     document.addEventListener('message', function (event) {
       var data = JSON.parse(event.data);
       if (data.action === 'algorithm') {
         window.algorithm = data.algorithm;
+      } else if (data.action === 'run') {
         $(window).trigger('bridge.run', window.algorithm);
-      } else if (data.action === 'run') {
-        $('#btn_run').trigger('click');
-      } else if (data.action === 'run') {
+      } else if (data.action === 'pause') {
         $('#btn_pause').trigger('click');
       }
     });

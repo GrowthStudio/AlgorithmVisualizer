@@ -43,18 +43,11 @@ $(() => {
     app.setCategories(data);
     DOM.addCategories();
 
-    const {
-      category,
-      algorithm,
-      file
-    } = getPath();
-
     window.postMessage(JSON.stringify({
       status: 'ready'
     }));
 
     $(window).on('bridge.run', function() {
-      window.postMessage(JSON.stringify({ status: 'bridge.run' }));
       DOM.showRequestedAlgorithm(window.algorithm.category, window.algorithm.algorithm, window.algorithm.file);
       window.setTimeout(function(){
         $('#btn_run').trigger('click');
