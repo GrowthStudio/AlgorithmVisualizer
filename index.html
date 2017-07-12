@@ -97,6 +97,7 @@
       };
       awaitPostMessage(); // Call this only once in your Web Code.
 
+    window.postMessage(JSON.stringify({ status: 'ready' }));
     document.addEventListener('message', function (event) {
       var data = JSON.parse(event.data);
       if (data.action === 'algorithm') {
