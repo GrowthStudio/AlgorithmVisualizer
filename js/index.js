@@ -49,27 +49,13 @@ $(() => {
       file
     } = getPath();
 
-    if(category && algorithm) {
-      DOM.showRequestedAlgorithm(category, algorithm, file);
-      window.setTimeout(function(){
-        $('#btn_run').trigger('click');
-      }, 100);
-    } else {
-      DOM.showRequestedAlgorithm('graph_search', 'bfs', 'tree');
-      window.setTimeout(function(){
-        $('#btn_run').trigger('click');
-      }, 100);
-    }
-
     window.postMessage(JSON.stringify({
       status: 'ready'
     }));
 
-    var myEvent = new CustomEvent("bridge.ready");
-    window.dispatchEvent(myEvent);
     $(window).on('bridge.run', function() {
       window.postMessage(JSON.stringify({ status: 'bridge.run' }));
-      DOM.showRequestedAlgorithm(window.category, window.algorithm, window.file);
+      DOM.showRequestedAlgorithm(window.algorithm.category, window.algorithm.algorithm, window.algorithm.file);
       window.setTimeout(function(){
         $('#btn_run').trigger('click');
       }, 100);
