@@ -3,10 +3,6 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <meta name="description" content="Tool for visualizing algorithms."/>
-  <meta property="og:title" content="Algorithm Visualizer"/>
-  <meta property="og:description" content="Tool for visualizing algorithms."/>
-  <meta property="og:image" content="img/image.png"/>
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
   <title>Algorithm Visualizer</title>
   <link rel="stylesheet" href="public/algorithm_visualizer.min.css"/>
 </head>
@@ -86,7 +82,7 @@
       function sendQueue() {
         while (queue.length > 0) window.postMessage(queue.shift());
       }
-    };
+    }
     awaitPostMessage(); // Call this only once in your Web Code.
 
     window.postMessage(JSON.stringify({status: 'ready'}));
