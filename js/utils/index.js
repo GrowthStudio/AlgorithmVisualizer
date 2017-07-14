@@ -5,13 +5,11 @@ const isScratchPaper = (category, algorithm) => {
 };
 
 const getAlgorithmDir = (category, algorithm) => {
-  if (isScratchPaper(category)) return './algorithm/scratch_paper/';
-  return `./algorithm/${category}/${algorithm}/`;
+  return `https://growthstudio.github.io/AlgorithmVisualizer/algorithm/${category}/${algorithm}/`;
 };
 
 const getFileDir = (category, algorithm, file) => {
-  if (isScratchPaper(category)) return './algorithm/scratch_paper/';
-  return `./algorithm/${category}/${algorithm}/${file}/`;
+  return `https://growthstudio.github.io/AlgorithmVisualizer/algorithm//algorithm/${category}/${algorithm}/${file}/`;
 };
 
 const renderMathJax = () =>{
