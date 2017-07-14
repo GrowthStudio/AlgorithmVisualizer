@@ -9,7 +9,7 @@ const getAlgorithmDir = (category, algorithm) => {
 };
 
 const getFileDir = (category, algorithm, file) => {
-  return `https://growthstudio.github.io/AlgorithmVisualizer/algorithm//algorithm/${category}/${algorithm}/${file}/`;
+  return `https://growthstudio.github.io/AlgorithmVisualizer/algorithm/${category}/${algorithm}/${file}/`;
 };
 
 const renderMathJax = () =>{
