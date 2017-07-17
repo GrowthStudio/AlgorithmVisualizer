@@ -49,30 +49,7 @@ $(() => {
 
     $(window).on('bridge.run', function() {
       DOM.showRequestedAlgorithm(window.algorithm.category, window.algorithm.algorithm, window.algorithm.file);
-      window.setTimeout(function(){
-        $('#btn_run').trigger('click');
-      }, 100);
     });
-    // app.getEditor().execute();
-
-    // window.postMessage(JSON.stringify({status: 'ready'}));
-    // document.addEventListener('message', function (event) {
-    //   var data = JSON.parse(event.data);
-    //   if(data.action === 'algorithm') {
-    //     const { category, algorithm, file } = data.data;
-    //     const category = 'backtracking';
-    //     const algorithm = 'n_queens';
-    //     DOM.showRequestedAlgorithm(category, algorithm, 'basic');
-    //   var err = app.getEditor().execute();
-    //   if (err) {
-    //       console.error(err);
-    //   }
-      // }
-      //
-      // if(data.action === 'run') {
-      //   app.getEditor().execute();
-      // }
-    // });
   });
 
   var v1LoadedScratch = getHashValue('scratch-paper');

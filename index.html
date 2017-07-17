@@ -103,7 +103,7 @@
       if (data.action === 'algorithm') {
         window.algorithm = data.algorithm;
       } else if (data.action === 'run') {
-        $(window).trigger('bridge.run', window.algorithm);
+        $(window).trigger('bridge.run');
       } else if (data.action === 'pause') {
         $('#btn_pause').trigger('click');
       }
